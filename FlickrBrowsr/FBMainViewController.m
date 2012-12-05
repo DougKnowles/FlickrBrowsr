@@ -96,7 +96,7 @@
 {
 	NSLog( @"%s for index path %@", __PRETTY_FUNCTION__ , indexPath );
 	UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
-	return cel
+	return cell;
 }
 
 @end
