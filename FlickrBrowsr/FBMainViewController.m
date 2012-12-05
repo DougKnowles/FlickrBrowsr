@@ -8,6 +8,8 @@
 
 #import "FBMainViewController.h"
 
+#import "FBAppDelegate.h"
+
 @interface FBMainViewController ()
 
 @end
@@ -18,6 +20,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	FBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+	self.managedObjectContext = appDelegate.managedObjectContext;
+	NSLog( @"Initialize MOC to %@", self.managedObjectContext );
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +76,27 @@
     } else {
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }
+}
+
+#pragma mark - UICollectionView delegate/datasource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+	NSLog( @"%s", __PRETTY_FUNCTION__ );
+	return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+	NSLog( @"%s", __PRETTY_FUNCTION__ );
+	return 2;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog( @"%s for index path %@", __PRETTY_FUNCTION__ , indexPath );
+	UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
+	return cel
 }
 
 @end

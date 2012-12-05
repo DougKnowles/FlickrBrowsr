@@ -8,10 +8,12 @@
 
 #import "FBFlipsideViewController.h"
 
-@interface FBMainViewController : UIViewController <FBFlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface FBMainViewController : UIViewController <FBFlipsideViewControllerDelegate, UIPopoverControllerDelegate, UICollectionViewDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+
+@property (assign)	IBOutlet	UICollectionView *		ibCollectionView;
 
 @end

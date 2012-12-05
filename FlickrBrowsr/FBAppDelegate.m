@@ -28,8 +28,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-	FBMainViewController *controller = (FBMainViewController *)self.window.rootViewController;
-	controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							
