@@ -28,6 +28,19 @@
 		DB53BD9E166D9A46006794C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB53BD71166D9A46006794C5 /* CoreData.framework */; };
 		DB53BDA6166D9A46006794C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB53BDA4166D9A46006794C5 /* InfoPlist.strings */; };
 		DB53BDA9166D9A46006794C5 /* FlickrBrowsrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BDA8166D9A46006794C5 /* FlickrBrowsrTests.m */; };
+		DB53BDB8166F849F006794C5 /* FBFeedReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BDB7166F849F006794C5 /* FBFeedReader.m */; };
+		DB53BE731670126F006794C5 /* FPEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE691670126F006794C5 /* FPEnclosure.m */; };
+		DB53BE741670126F006794C5 /* FPFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE6C1670126F006794C5 /* FPFeed.m */; };
+		DB53BE751670126F006794C5 /* FPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE6E1670126F006794C5 /* FPItem.m */; };
+		DB53BE761670126F006794C5 /* FPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE701670126F006794C5 /* FPLink.m */; };
+		DB53BE771670126F006794C5 /* FPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE721670126F006794C5 /* FPParser.m */; };
+		DB53BE7C16701283006794C5 /* NSDate_FeedParserExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE7916701283006794C5 /* NSDate_FeedParserExtensions.m */; };
+		DB53BE7D16701283006794C5 /* NSString_extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE7B16701283006794C5 /* NSString_extensions.m */; };
+		DB53BE8D167012B0006794C5 /* FPXMLPair.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE89167012B0006794C5 /* FPXMLPair.m */; };
+		DB53BE8E167012B0006794C5 /* FPXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE8B167012B0006794C5 /* FPXMLParser.m */; };
+		DB53BE95167012C5006794C5 /* FPExtensionElementNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE90167012C5006794C5 /* FPExtensionElementNode.m */; };
+		DB53BE96167012C5006794C5 /* FPExtensionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE92167012C5006794C5 /* FPExtensionNode.m */; };
+		DB53BE97167012C5006794C5 /* FPExtensionTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +81,36 @@
 		DB53BDA5166D9A46006794C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB53BDA7166D9A46006794C5 /* FlickrBrowsrTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrBrowsrTests.h; sourceTree = "<group>"; };
 		DB53BDA8166D9A46006794C5 /* FlickrBrowsrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrBrowsrTests.m; sourceTree = "<group>"; };
+		DB53BDB6166F849F006794C5 /* FBFeedReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedReader.h; sourceTree = "<group>"; };
+		DB53BDB7166F849F006794C5 /* FBFeedReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFeedReader.m; sourceTree = "<group>"; };
+		DB53BE671670126F006794C5 /* FeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedParser.h; path = FeedParser/FeedParser.h; sourceTree = "<group>"; };
+		DB53BE681670126F006794C5 /* FPEnclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPEnclosure.h; path = FeedParser/FPEnclosure.h; sourceTree = "<group>"; };
+		DB53BE691670126F006794C5 /* FPEnclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPEnclosure.m; path = FeedParser/FPEnclosure.m; sourceTree = "<group>"; };
+		DB53BE6A1670126F006794C5 /* FPErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPErrors.h; path = FeedParser/FPErrors.h; sourceTree = "<group>"; };
+		DB53BE6B1670126F006794C5 /* FPFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPFeed.h; path = FeedParser/FPFeed.h; sourceTree = "<group>"; };
+		DB53BE6C1670126F006794C5 /* FPFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPFeed.m; path = FeedParser/FPFeed.m; sourceTree = "<group>"; };
+		DB53BE6D1670126F006794C5 /* FPItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPItem.h; path = FeedParser/FPItem.h; sourceTree = "<group>"; };
+		DB53BE6E1670126F006794C5 /* FPItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPItem.m; path = FeedParser/FPItem.m; sourceTree = "<group>"; };
+		DB53BE6F1670126F006794C5 /* FPLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPLink.h; path = FeedParser/FPLink.h; sourceTree = "<group>"; };
+		DB53BE701670126F006794C5 /* FPLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPLink.m; path = FeedParser/FPLink.m; sourceTree = "<group>"; };
+		DB53BE711670126F006794C5 /* FPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPParser.h; path = FeedParser/FPParser.h; sourceTree = "<group>"; };
+		DB53BE721670126F006794C5 /* FPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPParser.m; path = FeedParser/FPParser.m; sourceTree = "<group>"; };
+		DB53BE7816701283006794C5 /* NSDate_FeedParserExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDate_FeedParserExtensions.h; path = FeedParser/Extensions/NSDate_FeedParserExtensions.h; sourceTree = "<group>"; };
+		DB53BE7916701283006794C5 /* NSDate_FeedParserExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDate_FeedParserExtensions.m; path = FeedParser/Extensions/NSDate_FeedParserExtensions.m; sourceTree = "<group>"; };
+		DB53BE7A16701283006794C5 /* NSString_extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSString_extensions.h; path = FeedParser/Extensions/NSString_extensions.h; sourceTree = "<group>"; };
+		DB53BE7B16701283006794C5 /* NSString_extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSString_extensions.m; path = FeedParser/Extensions/NSString_extensions.m; sourceTree = "<group>"; };
+		DB53BE87167012B0006794C5 /* FPExtensionElementNode_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPExtensionElementNode_Private.h; path = FeedParser/Internal/FPExtensionElementNode_Private.h; sourceTree = "<group>"; };
+		DB53BE88167012B0006794C5 /* FPXMLPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPXMLPair.h; path = FeedParser/Internal/FPXMLPair.h; sourceTree = "<group>"; };
+		DB53BE89167012B0006794C5 /* FPXMLPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPXMLPair.m; path = FeedParser/Internal/FPXMLPair.m; sourceTree = "<group>"; };
+		DB53BE8A167012B0006794C5 /* FPXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPXMLParser.h; path = FeedParser/Internal/FPXMLParser.h; sourceTree = "<group>"; };
+		DB53BE8B167012B0006794C5 /* FPXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPXMLParser.m; path = FeedParser/Internal/FPXMLParser.m; sourceTree = "<group>"; };
+		DB53BE8C167012B0006794C5 /* FPXMLParserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPXMLParserProtocol.h; path = FeedParser/Internal/FPXMLParserProtocol.h; sourceTree = "<group>"; };
+		DB53BE8F167012C5006794C5 /* FPExtensionElementNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPExtensionElementNode.h; path = "FeedParser/XML Extensions/FPExtensionElementNode.h"; sourceTree = "<group>"; };
+		DB53BE90167012C5006794C5 /* FPExtensionElementNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPExtensionElementNode.m; path = "FeedParser/XML Extensions/FPExtensionElementNode.m"; sourceTree = "<group>"; };
+		DB53BE91167012C5006794C5 /* FPExtensionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPExtensionNode.h; path = "FeedParser/XML Extensions/FPExtensionNode.h"; sourceTree = "<group>"; };
+		DB53BE92167012C5006794C5 /* FPExtensionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPExtensionNode.m; path = "FeedParser/XML Extensions/FPExtensionNode.m"; sourceTree = "<group>"; };
+		DB53BE93167012C5006794C5 /* FPExtensionTextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPExtensionTextNode.h; path = "FeedParser/XML Extensions/FPExtensionTextNode.h"; sourceTree = "<group>"; };
+		DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPExtensionTextNode.m; path = "FeedParser/XML Extensions/FPExtensionTextNode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +175,8 @@
 			children = (
 				DB53BD7C166D9A46006794C5 /* FBAppDelegate.h */,
 				DB53BD7D166D9A46006794C5 /* FBAppDelegate.m */,
+				DB53BDB6166F849F006794C5 /* FBFeedReader.h */,
+				DB53BDB7166F849F006794C5 /* FBFeedReader.m */,
 				DB53BD85166D9A46006794C5 /* MainStoryboard_iPhone.storyboard */,
 				DB53BD88166D9A46006794C5 /* MainStoryboard_iPad.storyboard */,
 				DB53BD8E166D9A46006794C5 /* FBMainViewController.h */,
@@ -139,6 +184,7 @@
 				DB53BD91166D9A46006794C5 /* FBFlipsideViewController.h */,
 				DB53BD92166D9A46006794C5 /* FBFlipsideViewController.m */,
 				DB53BD8B166D9A46006794C5 /* FlickrBrowsr.xcdatamodeld */,
+				DB53BE63167011C3006794C5 /* FeedParser */,
 				DB53BD74166D9A46006794C5 /* Supporting Files */,
 			);
 			path = FlickrBrowsr;
@@ -175,6 +221,65 @@
 				DB53BDA4166D9A46006794C5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB53BE63167011C3006794C5 /* FeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE671670126F006794C5 /* FeedParser.h */,
+				DB53BE681670126F006794C5 /* FPEnclosure.h */,
+				DB53BE691670126F006794C5 /* FPEnclosure.m */,
+				DB53BE6A1670126F006794C5 /* FPErrors.h */,
+				DB53BE6B1670126F006794C5 /* FPFeed.h */,
+				DB53BE6C1670126F006794C5 /* FPFeed.m */,
+				DB53BE6D1670126F006794C5 /* FPItem.h */,
+				DB53BE6E1670126F006794C5 /* FPItem.m */,
+				DB53BE6F1670126F006794C5 /* FPLink.h */,
+				DB53BE701670126F006794C5 /* FPLink.m */,
+				DB53BE711670126F006794C5 /* FPParser.h */,
+				DB53BE721670126F006794C5 /* FPParser.m */,
+				DB53BE64167011D6006794C5 /* Extensions */,
+				DB53BE65167011F7006794C5 /* Internal */,
+				DB53BE6616701208006794C5 /* XML Extensions */,
+			);
+			name = FeedParser;
+			sourceTree = "<group>";
+		};
+		DB53BE64167011D6006794C5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE7816701283006794C5 /* NSDate_FeedParserExtensions.h */,
+				DB53BE7916701283006794C5 /* NSDate_FeedParserExtensions.m */,
+				DB53BE7A16701283006794C5 /* NSString_extensions.h */,
+				DB53BE7B16701283006794C5 /* NSString_extensions.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		DB53BE65167011F7006794C5 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE87167012B0006794C5 /* FPExtensionElementNode_Private.h */,
+				DB53BE88167012B0006794C5 /* FPXMLPair.h */,
+				DB53BE89167012B0006794C5 /* FPXMLPair.m */,
+				DB53BE8A167012B0006794C5 /* FPXMLParser.h */,
+				DB53BE8B167012B0006794C5 /* FPXMLParser.m */,
+				DB53BE8C167012B0006794C5 /* FPXMLParserProtocol.h */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		DB53BE6616701208006794C5 /* XML Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE8F167012C5006794C5 /* FPExtensionElementNode.h */,
+				DB53BE90167012C5006794C5 /* FPExtensionElementNode.m */,
+				DB53BE91167012C5006794C5 /* FPExtensionNode.h */,
+				DB53BE92167012C5006794C5 /* FPExtensionNode.m */,
+				DB53BE93167012C5006794C5 /* FPExtensionTextNode.h */,
+				DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */,
+			);
+			name = "XML Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +399,19 @@
 				DB53BD8D166D9A46006794C5 /* FlickrBrowsr.xcdatamodeld in Sources */,
 				DB53BD90166D9A46006794C5 /* FBMainViewController.m in Sources */,
 				DB53BD93166D9A46006794C5 /* FBFlipsideViewController.m in Sources */,
+				DB53BDB8166F849F006794C5 /* FBFeedReader.m in Sources */,
+				DB53BE731670126F006794C5 /* FPEnclosure.m in Sources */,
+				DB53BE741670126F006794C5 /* FPFeed.m in Sources */,
+				DB53BE751670126F006794C5 /* FPItem.m in Sources */,
+				DB53BE761670126F006794C5 /* FPLink.m in Sources */,
+				DB53BE771670126F006794C5 /* FPParser.m in Sources */,
+				DB53BE7C16701283006794C5 /* NSDate_FeedParserExtensions.m in Sources */,
+				DB53BE7D16701283006794C5 /* NSString_extensions.m in Sources */,
+				DB53BE8D167012B0006794C5 /* FPXMLPair.m in Sources */,
+				DB53BE8E167012B0006794C5 /* FPXMLParser.m in Sources */,
+				DB53BE95167012C5006794C5 /* FPExtensionElementNode.m in Sources */,
+				DB53BE96167012C5006794C5 /* FPExtensionNode.m in Sources */,
+				DB53BE97167012C5006794C5 /* FPExtensionTextNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +490,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "FlickrBrowsr/FeedParser/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -393,6 +512,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "FlickrBrowsr/FeedParser/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;

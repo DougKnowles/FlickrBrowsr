@@ -8,12 +8,17 @@
 
 #import "FBFlipsideViewController.h"
 
-@interface FBMainViewController : UIViewController <FBFlipsideViewControllerDelegate, UIPopoverControllerDelegate, UICollectionViewDelegate>
+#import "FBFeedReader.h"
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@interface FBMainViewController : UIViewController <FBFlipsideViewControllerDelegate, FBFeedReaderDelegate,
+													UIPopoverControllerDelegate, UICollectionViewDelegate>
 
-@property (assign)	IBOutlet	UICollectionView *		ibCollectionView;
+@property (strong, nonatomic)	NSManagedObjectContext *	managedObjectContext;
+@property (strong, nonatomic)	FBFeedReader *				feedReader;
+
+@property (strong, nonatomic)	UIPopoverController *		flipsidePopoverController;
+
+@property (assign)	IBOutlet	UICollectionView *			ibCollectionView;
 
 @end
