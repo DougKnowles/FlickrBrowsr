@@ -41,6 +41,8 @@
 		DB53BE95167012C5006794C5 /* FPExtensionElementNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE90167012C5006794C5 /* FPExtensionElementNode.m */; };
 		DB53BE96167012C5006794C5 /* FPExtensionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE92167012C5006794C5 /* FPExtensionNode.m */; };
 		DB53BE97167012C5006794C5 /* FPExtensionTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */; };
+		DB53BE9B167048C0006794C5 /* FBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE9A167048C0006794C5 /* FBImage.m */; };
+		DB53BEA016704A9D006794C5 /* FBImage+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE9F16704A9D006794C5 /* FBImage+Interface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,10 @@
 		DB53BE92167012C5006794C5 /* FPExtensionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPExtensionNode.m; path = "FeedParser/XML Extensions/FPExtensionNode.m"; sourceTree = "<group>"; };
 		DB53BE93167012C5006794C5 /* FPExtensionTextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPExtensionTextNode.h; path = "FeedParser/XML Extensions/FPExtensionTextNode.h"; sourceTree = "<group>"; };
 		DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPExtensionTextNode.m; path = "FeedParser/XML Extensions/FPExtensionTextNode.m"; sourceTree = "<group>"; };
+		DB53BE99167048C0006794C5 /* FBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBImage.h; path = Model/Generated/FBImage.h; sourceTree = "<group>"; };
+		DB53BE9A167048C0006794C5 /* FBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBImage.m; path = Model/Generated/FBImage.m; sourceTree = "<group>"; };
+		DB53BE9E16704A9D006794C5 /* FBImage+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBImage+Interface.h"; path = "Model/Interface/FBImage+Interface.h"; sourceTree = "<group>"; };
+		DB53BE9F16704A9D006794C5 /* FBImage+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FBImage+Interface.m"; path = "Model/Interface/FBImage+Interface.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 				DB53BD91166D9A46006794C5 /* FBFlipsideViewController.h */,
 				DB53BD92166D9A46006794C5 /* FBFlipsideViewController.m */,
 				DB53BD8B166D9A46006794C5 /* FlickrBrowsr.xcdatamodeld */,
+				DB53BE9816704888006794C5 /* Model */,
 				DB53BE63167011C3006794C5 /* FeedParser */,
 				DB53BD74166D9A46006794C5 /* Supporting Files */,
 			);
@@ -280,6 +287,33 @@
 				DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */,
 			);
 			name = "XML Extensions";
+			sourceTree = "<group>";
+		};
+		DB53BE9816704888006794C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE9C167049A3006794C5 /* Generated */,
+				DB53BE9D167049E5006794C5 /* Implementation */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DB53BE9C167049A3006794C5 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE99167048C0006794C5 /* FBImage.h */,
+				DB53BE9A167048C0006794C5 /* FBImage.m */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		DB53BE9D167049E5006794C5 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				DB53BE9E16704A9D006794C5 /* FBImage+Interface.h */,
+				DB53BE9F16704A9D006794C5 /* FBImage+Interface.m */,
+			);
+			name = Implementation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +446,8 @@
 				DB53BE95167012C5006794C5 /* FPExtensionElementNode.m in Sources */,
 				DB53BE96167012C5006794C5 /* FPExtensionNode.m in Sources */,
 				DB53BE97167012C5006794C5 /* FPExtensionTextNode.m in Sources */,
+				DB53BE9B167048C0006794C5 /* FBImage.m in Sources */,
+				DB53BEA016704A9D006794C5 /* FBImage+Interface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

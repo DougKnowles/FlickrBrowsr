@@ -10,6 +10,8 @@
 
 #import "FBAppDelegate.h"
 
+#import "FBImage+Interface.h"
+
 #import "FeedParser/FeedParser.h"
 
 
@@ -116,18 +118,25 @@
 	NSError *error = nil;
 	FPFeed *feed = [FPParser parsedFeedWithData:data error:&error];
 	if  ( feed == nil )  {
+		// TODO: report error
 		NSLog( @"Error parsing feed: %@", error );
 		return;
 	}
 	// process the results
 	NSLog( @"Downloaded feed: %@", feed.description );
 	for  ( FPItem *item in feed.items )  {
-		NSLog( @"%@ by %@ on %@\n%@\nLinks: %@",
-			  item.title, item.creator, item.pubDate, item.description, item.links );
-		if  ( item.enclosures.count != 0 )  {
-			NSLog( @"Enclosures: %@", item.enclosures );
-		}
+		[FBImage createFBImageWithFPItem:item inContext:self.managedObjectContext];
 	}
+	// for now, log what is persisted...
+	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"FBImage"];
+	error = nil;
+	NSArray *images = [self.managedObjectContext executeFetchRequest:req error:&error];
+	if  ( images == nil )  {
+		// TODO: report error
+		NSLog( @"Error fetching images from store: %@", error );
+		return;
+	}
+	NSLog( @"Repository contents: %@", images );
 }
 
 - (void)feedReader:(FBFeedReader *)loader receivedError:(NSError *)error
