@@ -18,5 +18,6 @@
 @dynamic publicationDate;
 @dynamic title;
 @dynamic feedReaderRef;
+@dynamic xmlParserRef;
 
 @end

@@ -27,7 +27,6 @@
 	// set up persistence layer and feed query; start query
 	FBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
 	self.managedObjectContext = appDelegate.managedObjectContext;
-	NSLog( @"Initialize MOC to %@", self.managedObjectContext );
 		
 	// configure the collection layout
 	UICollectionViewFlowLayout *flowLayout = [[[UICollectionViewFlowLayout alloc] init] autorelease];
@@ -125,9 +124,11 @@
 	FBImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
 	cell.ibImageLabel.text = imageObject.title;
 	if  ( imageObject.imageData != nil )  {
-		UIImage *image = [UIImage imageWithData:imageObject.imageData];
-		cell.ibImageView.image = (image != nil) ? image : [UIImage imageNamed:@"PlaceHolder"];
-		cell.ibImageView.hidden = NO;
+		id image = [NSKeyedUnarchiver unarchiveObjectWithData:imageObject.imageData];
+		if  ( [image isKindOfClass:[UIImage class]] )  {
+			cell.ibImageView.image = image;
+			cell.ibImageView.hidden = NO;
+		}
 	}
 	else  {
 		cell.ibImageView.image = nil;

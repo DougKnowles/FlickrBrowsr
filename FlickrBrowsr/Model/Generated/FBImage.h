@@ -19,5 +19,6 @@
 @property (nonatomic, retain) NSDate * publicationDate;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) id feedReaderRef;
+@property (nonatomic, retain) id xmlParserRef;
 
 @end

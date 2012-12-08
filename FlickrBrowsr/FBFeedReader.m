@@ -61,7 +61,6 @@
 		first = NO;
 	}
 	
-	NSLog( @"Composed URL: %@", urlString );
 	NSURL *url = [NSURL URLWithString:urlString];
 	self.urlRequest = [NSMutableURLRequest requestWithURL:url];
 }

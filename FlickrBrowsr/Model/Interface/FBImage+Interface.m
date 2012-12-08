@@ -68,11 +68,23 @@ NSString *	FBImageDownloadNotification = @"FBImageDownloadNotification";
 
 - (void)feedReader:(FBFeedReader *)loader downloadedData:(NSData *)data
 {
-	NSLog( @"%ld bytes downloaded for: %@", (long)data.length, self.title );
-	self.imageData = data;
-	self.feedReader = nil;
+	self.feedReader = nil;		// done with reader
+								// try parsing data as an image
+	UIImage *image = [UIImage imageWithData:data];
+	if  ( image != nil )  {
+		// have it! encode and save
+		NSData *imageData = [NSKeyedArchiver archivedDataWithRootObject:image];
+		self.imageData = imageData;
+		[[NSNotificationCenter defaultCenter] postNotificationName:FBImageDownloadNotification object:self];
+	}
+	else  {
+		// not an image; probably the page HTML
+		NSXMLParser *xmlParser = [[[NSXMLParser alloc] initWithData:data] autorelease];
+		xmlParser.delegate = (id<NSXMLParserDelegate>)self;
+		self.xmlParserRef = xmlParser;
+		[xmlParser parse];
+	}
 	// post notification
-	[[NSNotificationCenter defaultCenter] postNotificationName:FBImageDownloadNotification object:self];
 }
 
 - (void)feedReader:(FBFeedReader *)loader receivedError:(NSError *)error
@@ -82,7 +94,27 @@ NSString *	FBImageDownloadNotification = @"FBImageDownloadNotification";
 }
 
 
+#pragma mark - NSXMLParserDelegate
 
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict
+{
+	NSString *property = [attributeDict objectForKey:@"property"];
+	if  ( (property != nil) && [property isEqualToString:@"og:image"] )  {
+		NSString *imageURL = [attributeDict objectForKey:@"content"];
+		if  ( imageURL.length > 0 )  {
+			// start download of the actual image
+			[parser abortParsing];
+			self.xmlParserRef = nil;
+			self.imageURLString = imageURL;
+			[self startImageDownload];
+		}	// if imageURL
+	}	//if og.image
+}
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser
+{
+	self.xmlParserRef = nil;
+}
 
 - (NSString *)description
 {
