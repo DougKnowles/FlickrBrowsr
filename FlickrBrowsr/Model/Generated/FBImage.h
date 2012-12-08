@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * imageURLString;
 @property (nonatomic, retain) NSDate * publicationDate;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) id feedReaderRef;
 
 @end

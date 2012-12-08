@@ -75,13 +75,11 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-	NSLog( @"%s", __PRETTY_FUNCTION__ );
 	[self.incomingData setLength:0];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-	NSLog( @"%s with %ld bytes", __PRETTY_FUNCTION__, (long)data.length );
 	[self.incomingData appendData:data];
 }
 

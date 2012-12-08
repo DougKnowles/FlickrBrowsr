@@ -29,6 +29,9 @@
 	self.managedObjectContext = appDelegate.managedObjectContext;
 	NSLog( @"Initialize MOC to %@", self.managedObjectContext );
 	
+	// listen for image load notifications
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageDownloadComplete:) name:FBImageDownloadNotification object:nil];
+	
 	NSArray *args = [NSArray arrayWithObjects:
 					 @"format=rss_200",
 					 nil];
@@ -75,6 +78,8 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+
 	[_managedObjectContext release];
 	[_flipsidePopoverController release];
     [super dealloc];
@@ -107,11 +112,20 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSUInteger index = [indexPath indexAtPosition:1];
-	FBImage *image = [self.feedContent objectAtIndex:index];
+	FBImage *imageObject = [self.feedContent objectAtIndex:index];
 	
 	FBImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
 	cell.ibImageLabel.text = [NSString stringWithFormat:@"Image #%ld", (long)index];
-	cell.ibImageLabel.text = image.title;
+	cell.ibImageLabel.text = imageObject.title;
+	if  ( imageObject.imageData != nil )  {
+		UIImage *image = [UIImage imageWithData:imageObject.imageData];
+		cell.ibImageView.image = (image != nil) ? image : [UIImage imageNamed:@"PlaceHolder"];
+		cell.ibImageView.hidden = NO;
+	}
+	else  {
+		cell.ibImageView.image = nil;
+		cell.ibImageView.hidden = YES;
+	}
 	
 	return cell;
 }
@@ -151,6 +165,14 @@
 {
 	NSLog( @"%s feed error: %@", __PRETTY_FUNCTION__, error );
 	// TODO: report error
+}
+
+#pragma mark - Notifications
+
+- (void)imageDownloadComplete:(NSNotification *)aNotification
+{
+	NSLog( @"%s", __PRETTY_FUNCTION__ );
+	[self.ibCollectionView reloadData];
 }
 
 

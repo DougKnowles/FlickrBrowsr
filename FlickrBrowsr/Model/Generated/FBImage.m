@@ -17,5 +17,6 @@
 @dynamic imageURLString;
 @dynamic publicationDate;
 @dynamic title;
+@dynamic feedReaderRef;
 
 @end

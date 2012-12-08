@@ -9,10 +9,17 @@
 #import "FBImage.h"
 
 @class FPItem;
+@class FBFeedReader;
 
+extern	NSString *	FBImageDownloadNotification;
 
 @interface FBImage (Interface)
 
+@property (readwrite, strong)	FBFeedReader *		feedReader;
+
+
 + (FBImage *)createFBImageWithFPItem:(FPItem *)fpItem inContext:(NSManagedObjectContext *)context;
+
+- (void)startImageDownload;
 
 @end

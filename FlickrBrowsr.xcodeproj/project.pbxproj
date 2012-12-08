@@ -43,6 +43,7 @@
 		DB53BE97167012C5006794C5 /* FPExtensionTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE94167012C5006794C5 /* FPExtensionTextNode.m */; };
 		DB53BE9B167048C0006794C5 /* FBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE9A167048C0006794C5 /* FBImage.m */; };
 		DB53BEA016704A9D006794C5 /* FBImage+Interface.m in Sources */ = {isa = PBXBuildFile; fileRef = DB53BE9F16704A9D006794C5 /* FBImage+Interface.m */; };
+		DB53BEB41673975B006794C5 /* PlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = DB53BEB31673975B006794C5 /* PlaceHolder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		DB53BE9A167048C0006794C5 /* FBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBImage.m; path = Model/Generated/FBImage.m; sourceTree = "<group>"; };
 		DB53BE9E16704A9D006794C5 /* FBImage+Interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FBImage+Interface.h"; path = "Model/Interface/FBImage+Interface.h"; sourceTree = "<group>"; };
 		DB53BE9F16704A9D006794C5 /* FBImage+Interface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FBImage+Interface.m"; path = "Model/Interface/FBImage+Interface.m"; sourceTree = "<group>"; };
+		DB53BEB31673975B006794C5 /* PlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlaceHolder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		DB53BD74166D9A46006794C5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB53BEB31673975B006794C5 /* PlaceHolder.png */,
 				DB53BD75166D9A46006794C5 /* FlickrBrowsr-Info.plist */,
 				DB53BD76166D9A46006794C5 /* InfoPlist.strings */,
 				DB53BD79166D9A46006794C5 /* main.m */,
@@ -394,6 +397,7 @@
 				DB53BD84166D9A46006794C5 /* Default-568h@2x.png in Resources */,
 				DB53BD87166D9A46006794C5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				DB53BD8A166D9A46006794C5 /* MainStoryboard_iPad.storyboard in Resources */,
+				DB53BEB41673975B006794C5 /* PlaceHolder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
