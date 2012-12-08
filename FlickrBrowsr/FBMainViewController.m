@@ -101,13 +101,18 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
 	NSLog( @"%s", __PRETTY_FUNCTION__ );
-	return 2;
+	return self.feedContent.count;	
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	NSLog( @"%s for index path %@", __PRETTY_FUNCTION__ , indexPath );
-	UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
+	NSUInteger index = [indexPath indexAtPosition:1];
+	FBImage *image = [self.feedContent objectAtIndex:index];
+	
+	FBImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
+	cell.ibImageLabel.text = [NSString stringWithFormat:@"Image #%ld", (long)index];
+	cell.ibImageLabel.text = image.title;
+	
 	return cell;
 }
 
@@ -122,12 +127,12 @@
 		NSLog( @"Error parsing feed: %@", error );
 		return;
 	}
-	// process the results
+	// process the results to persist them
 	NSLog( @"Downloaded feed: %@", feed.description );
 	for  ( FPItem *item in feed.items )  {
 		[FBImage createFBImageWithFPItem:item inContext:self.managedObjectContext];
 	}
-	// for now, log what is persisted...
+	// reload the persisted objects
 	NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"FBImage"];
 	error = nil;
 	NSArray *images = [self.managedObjectContext executeFetchRequest:req error:&error];
@@ -136,13 +141,24 @@
 		NSLog( @"Error fetching images from store: %@", error );
 		return;
 	}
-	NSLog( @"Repository contents: %@", images );
+	// for now, just replace the old content with the new
+	// eventually, we may want to prune the dataset and merge identical results, etc.
+	self.feedContent = images;
+	[self.ibCollectionView reloadData];
 }
 
 - (void)feedReader:(FBFeedReader *)loader receivedError:(NSError *)error
 {
 	NSLog( @"%s feed error: %@", __PRETTY_FUNCTION__, error );
+	// TODO: report error
 }
+
+
+@end
+
+
+@implementation FBImageCell
+
 
 
 @end

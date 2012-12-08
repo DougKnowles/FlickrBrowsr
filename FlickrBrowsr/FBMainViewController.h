@@ -19,6 +19,16 @@
 
 @property (strong, nonatomic)	UIPopoverController *		flipsidePopoverController;
 
+@property (strong, nonatomic)	NSArray *					feedContent;
+
 @property (assign)	IBOutlet	UICollectionView *			ibCollectionView;
+
+@end
+
+
+@interface FBImageCell : UICollectionViewCell
+
+@property (assign)	IBOutlet	UILabel *					ibImageLabel;
+@property (assign)	IBOutlet	UIImageView *				ibImageView;
 
 @end
