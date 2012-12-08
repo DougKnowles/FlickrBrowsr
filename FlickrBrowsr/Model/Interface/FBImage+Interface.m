@@ -68,7 +68,7 @@ NSString *	FBImageDownloadNotification = @"FBImageDownloadNotification";
 
 - (void)feedReader:(FBFeedReader *)loader downloadedData:(NSData *)data
 {
-	NSLog( @"%@ downloaded %ld bytes of image data", self, (long)data.length );
+	NSLog( @"%ld bytes downloaded for: %@", (long)data.length, self.title );
 	self.imageData = data;
 	self.feedReader = nil;
 	// post notification

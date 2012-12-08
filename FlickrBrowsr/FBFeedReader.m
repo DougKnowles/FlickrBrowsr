@@ -91,7 +91,6 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	NSLog( @"%s, %ld bytes downloaded", __PRETTY_FUNCTION__, (long)self.incomingData.length );
 	if  ( self.delegate != nil )  [self.delegate feedReader:self downloadedData:self.incomingData];
 }
 

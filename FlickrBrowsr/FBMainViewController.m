@@ -99,13 +99,11 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-	NSLog( @"%s", __PRETTY_FUNCTION__ );
 	return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-	NSLog( @"%s", __PRETTY_FUNCTION__ );
 	return self.feedContent.count;	
 }
 
@@ -115,7 +113,6 @@
 	FBImage *imageObject = [self.feedContent objectAtIndex:index];
 	
 	FBImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
-	cell.ibImageLabel.text = [NSString stringWithFormat:@"Image #%ld", (long)index];
 	cell.ibImageLabel.text = imageObject.title;
 	if  ( imageObject.imageData != nil )  {
 		UIImage *image = [UIImage imageWithData:imageObject.imageData];
@@ -142,7 +139,6 @@
 		return;
 	}
 	// process the results to persist them
-	NSLog( @"Downloaded feed: %@", feed.description );
 	for  ( FPItem *item in feed.items )  {
 		[FBImage createFBImageWithFPItem:item inContext:self.managedObjectContext];
 	}
@@ -171,7 +167,6 @@
 
 - (void)imageDownloadComplete:(NSNotification *)aNotification
 {
-	NSLog( @"%s", __PRETTY_FUNCTION__ );
 	[self.ibCollectionView reloadData];
 }
 
