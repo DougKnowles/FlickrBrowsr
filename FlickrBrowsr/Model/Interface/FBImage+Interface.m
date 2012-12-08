@@ -19,7 +19,7 @@
 	FBImage *newImage = [NSEntityDescription insertNewObjectForEntityForName:@"FBImage" inManagedObjectContext:context];
 	newImage.title = fpItem.title;
 	newImage.publicationDate = fpItem.pubDate;
-	newImage.creator = fpItem.creator;
+	newImage.author = fpItem.author;
 	newImage.imageDescription = fpItem.description;
 	newImage.imageURLString = fpItem.link.href;
 	

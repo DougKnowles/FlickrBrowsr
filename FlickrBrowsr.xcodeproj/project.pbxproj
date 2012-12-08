@@ -632,6 +632,7 @@
 				DB53BDAE166D9A46006794C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB53BDAF166D9A46006794C5 /* Build configuration list for PBXNativeTarget "FlickrBrowsrTests" */ = {
 			isa = XCConfigurationList;
@@ -640,6 +641,7 @@
 				DB53BDB1166D9A46006794C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
