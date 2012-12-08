@@ -22,6 +22,7 @@
 @property (strong, nonatomic)	NSArray *					feedContent;
 
 @property (assign)	IBOutlet	UICollectionView *			ibCollectionView;
+@property (assign)	IBOutlet	UINavigationBar *			ibNavigationBar;
 
 @end
 

@@ -13,21 +13,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-un-66A">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="910" id="8G1-dR-zg0"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="usb-Jq-nYc">
-                                    <size key="itemSize" width="160" height="154"/>
+                                    <size key="itemSize" width="160" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrImage" id="3Sw-fj-wcR" customClass="FBImageCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="154"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNW-Ze-GwG">
@@ -79,11 +76,13 @@
                             <constraint firstItem="O7Q-un-66A" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" type="default" id="Wzy-Ej-XtJ"/>
                             <constraint firstItem="13" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" type="default" id="rxf-8n-QJS"/>
                             <constraint firstItem="O7Q-un-66A" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" type="default" id="t3I-ko-xcZ"/>
+                            <constraint firstItem="O7Q-un-66A" firstAttribute="top" secondItem="13" secondAttribute="bottom" type="default" id="xAg-Yr-LRi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mF1-ut-XYU"/>
                     <connections>
                         <outlet property="ibCollectionView" destination="O7Q-un-66A" id="afg-YE-x1Z"/>
+                        <outlet property="ibNavigationBar" destination="13" id="Yum-Dx-2hZ"/>
                         <segue destination="5" kind="popover" identifier="showAlternate" popoverAnchorBarButtonItem="15" id="22">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>

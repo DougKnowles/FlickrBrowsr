@@ -28,7 +28,16 @@
 	FBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
 	self.managedObjectContext = appDelegate.managedObjectContext;
 	NSLog( @"Initialize MOC to %@", self.managedObjectContext );
-	
+		
+	// configure the collection layout
+	UICollectionViewFlowLayout *flowLayout = [[[UICollectionViewFlowLayout alloc] init] autorelease];
+	CGSize viewSize = self.ibCollectionView.superview.bounds.size;
+	CGFloat minDimension = fmin(viewSize.height, viewSize.width) - 44.0;	// yes, this is dirty; adjust for nav bar
+	NSUInteger itemsAcross = (minDimension < 400.0) ? 3 : 4;
+	CGFloat optimalWidth = (minDimension - (flowLayout.minimumInteritemSpacing * (itemsAcross - 1))) / (CGFloat)itemsAcross;
+	flowLayout.itemSize = CGSizeMake(optimalWidth, optimalWidth);
+	self.ibCollectionView.collectionViewLayout = flowLayout;
+
 	// listen for image load notifications
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageDownloadComplete:) name:FBImageDownloadNotification object:nil];
 	
@@ -39,6 +48,7 @@
 	self.feedReader.delegate = self;
 	[self.feedReader startQuery];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
