@@ -16,6 +16,7 @@ extern	NSString *	FBImageDownloadNotification;
 @interface FBImage (Interface)
 
 @property (readwrite, strong)	FBFeedReader *		feedReader;
+@property (readonly, assign)	UIImage *			image;
 
 
 + (FBImage *)createFBImageWithFPItem:(FPItem *)fpItem inContext:(NSManagedObjectContext *)context;

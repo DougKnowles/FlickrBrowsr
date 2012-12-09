@@ -52,6 +52,14 @@ NSString *	FBImageDownloadNotification = @"FBImageDownloadNotification";
 	self.feedReaderRef = feedReader;
 }
 
+- (UIImage *)image
+{
+	UIImage *result = nil;
+	id candidate = [NSKeyedUnarchiver unarchiveObjectWithData:self.imageData];
+	if  ([candidate isKindOfClass:[UIImage class]]) result = candidate;
+	return result;
+}
+
 
 #pragma mark - Image download
 

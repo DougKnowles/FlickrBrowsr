@@ -48,6 +48,7 @@
                                         <connections>
                                             <outlet property="ibImageLabel" destination="VNW-Ze-GwG" id="caJ-C0-Heu"/>
                                             <outlet property="ibImageView" destination="ac2-QL-OqB" id="qs3-i2-4Gw"/>
+                                            <segue destination="l34-Is-fey" kind="push" identifier="ImageSegue" id="7XX-nf-X6q"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -59,7 +60,7 @@
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                 <items>
                                     <navigationItem title="FlickrBrowsr" id="14">
-                                        <barButtonItem key="rightBarButtonItem" title="Info" id="15">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Settings" id="15">
                                             <connections>
                                                 <action selector="togglePopover:" destination="2" id="23"/>
                                             </connections>
@@ -125,6 +126,52 @@
             </objects>
             <point key="canvasLocation" x="1810" y="101"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="Nfa-a2-d3N">
+            <objects>
+                <viewController id="l34-Is-fey" customClass="FBImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sUD-PM-2EG">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="(title)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfP-wL-jvz">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="(author)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYb-zO-F4C">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="XmU-Bo-FYZ"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YYb-zO-F4C" firstAttribute="bottom" secondItem="sUD-PM-2EG" secondAttribute="bottom" type="default" id="0go-GX-mxI"/>
+                            <constraint firstAttribute="bottom" secondItem="XmU-Bo-FYZ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="22U-Hb-jfe"/>
+                            <constraint firstItem="XmU-Bo-FYZ" firstAttribute="trailing" secondItem="sUD-PM-2EG" secondAttribute="trailing" type="default" id="AdZ-Wt-GjM"/>
+                            <constraint firstItem="jfP-wL-jvz" firstAttribute="leading" secondItem="sUD-PM-2EG" secondAttribute="leading" type="default" id="HnI-Oj-io6"/>
+                            <constraint firstItem="YYb-zO-F4C" firstAttribute="leading" secondItem="sUD-PM-2EG" secondAttribute="leading" type="default" id="VuK-Ec-GfX"/>
+                            <constraint firstItem="jfP-wL-jvz" firstAttribute="trailing" secondItem="sUD-PM-2EG" secondAttribute="trailing" type="default" id="YNY-Pj-S9X"/>
+                            <constraint firstItem="YYb-zO-F4C" firstAttribute="trailing" secondItem="sUD-PM-2EG" secondAttribute="trailing" type="default" id="Zad-63-qma"/>
+                            <constraint firstItem="XmU-Bo-FYZ" firstAttribute="leading" secondItem="sUD-PM-2EG" secondAttribute="leading" type="default" id="nSP-Fh-CGW"/>
+                            <constraint firstItem="jfP-wL-jvz" firstAttribute="top" secondItem="sUD-PM-2EG" secondAttribute="top" type="default" id="rbl-E2-6LY"/>
+                            <constraint firstItem="XmU-Bo-FYZ" firstAttribute="top" secondItem="sUD-PM-2EG" secondAttribute="top" constant="20" symbolic="YES" type="default" id="wR4-Jg-kvC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QWf-Hw-zc6"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="YYb-zO-F4C" id="nMc-K0-DFF"/>
+                        <outlet property="imageView" destination="XmU-Bo-FYZ" id="T5n-z9-pLH"/>
+                        <outlet property="titleLabel" destination="jfP-wL-jvz" id="wOl-NN-Fd5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amU-Qc-YFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="-1368"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="h5K-AO-i2m">
             <objects>
@@ -156,6 +203,14 @@
             <relationships>
                 <relationship kind="outlet" name="ibImageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="ibImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="FBImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="FBMainViewController" superclassName="UIViewController">

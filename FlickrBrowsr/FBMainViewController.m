@@ -9,6 +9,7 @@
 #import "FBMainViewController.h"
 
 #import "FBAppDelegate.h"
+#import "FBImageViewController.h"
 
 #import "FBImage+Interface.h"
 
@@ -83,6 +84,22 @@
             popoverController.delegate = self;
         }
     }
+	else if ( [[segue identifier] isEqualToString:@"ImageSegue"] )  {
+		id destViewCtrl = segue.destinationViewController;
+		if  ( [destViewCtrl isKindOfClass:[FBImageViewController class]] )  {
+			FBImageViewController *imageCtrl = destViewCtrl;
+			NSIndexPath *indexPath = [self.ibCollectionView.indexPathsForSelectedItems objectAtIndex:0];
+			NSLog( @"Setting up %@ with index path %@", imageCtrl, indexPath );
+			FBImage *selImageObject = [self.feedContent objectAtIndex:[indexPath indexAtPosition:1]];
+			imageCtrl.imageTitle = selImageObject.title;
+			imageCtrl.author = selImageObject.title;
+			imageCtrl.image = selImageObject.image;
+		}
+		else  NSLog( @"Unexpected controller for %@: %@", segue.identifier, segue.destinationViewController );
+	}
+	else  {
+		NSLog( @"%s unrecognized segue: %@", __PRETTY_FUNCTION__, segue );
+	}
 }
 
 - (void)dealloc
@@ -123,9 +140,10 @@
 	
 	FBImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FlickrImage" forIndexPath:indexPath];
 	cell.ibImageLabel.text = imageObject.title;
+	
 	if  ( imageObject.imageData != nil )  {
-		id image = [NSKeyedUnarchiver unarchiveObjectWithData:imageObject.imageData];
-		if  ( [image isKindOfClass:[UIImage class]] )  {
+		id image = imageObject.image;
+		if  ( image != nil )  {
 			cell.ibImageView.image = image;
 			cell.ibImageView.hidden = NO;
 		}
@@ -165,6 +183,7 @@
 	// for now, just replace the old content with the new
 	// eventually, we may want to prune the dataset and merge identical results, etc.
 	self.feedContent = images;
+	NSLog( @"Reloading view with %ld images", (long)self.feedContent.count );
 	[self.ibCollectionView reloadData];
 }
 
